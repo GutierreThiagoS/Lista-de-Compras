@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.example.listadecompras.framework.presentation.product_list.ListProductViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <TextView
+               android:id="@+id/notProduct"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_centerInParent="true"
+               android:textSize="20sp"
+               android:gravity="center"
+               android:text="@string/not_product"/>
+           <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/productListRecycler"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               tools:itemCount="7"
+               tools:listitem="@layout/item_product_list_recycler"
+               app:productRecycler="@{viewModel.productListLive}" />
+       </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

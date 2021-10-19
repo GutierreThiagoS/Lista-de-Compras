@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+         android:id="@+id/shoppingListFragment"
+         android:icon="@drawable/ic_baseline_view_list_24"
+         android:title="@string/home"/>
+    <item
+        android:id="@+id/addNewProductFragment"
+        android:icon="@drawable/ic_baseline_library_add"
+        android:title="@string/add_product"/>
+    <item
+        android:id="@+id/listProductsFragment"
+        android:icon="@drawable/ic_baseline_playlist_add"
+        android:title="@string/product_list"/>
+    <item
+        android:id="@+id/settingFragment"
+        android:icon="@drawable/ic_baseline_settings"
+        android:title="@string/config"/>
+</menu>

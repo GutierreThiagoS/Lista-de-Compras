@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_menu"
+    app:startDestination="@id/shoppingListFragment">
+
+    <fragment
+        android:id="@+id/addNewProductFragment"
+        android:name="com.example.listadecompras.framework.presentation.add_product.AddNewProductFragment"
+        android:label="AddNewProductFragment" />
+    <fragment
+        android:id="@+id/listProductsFragment"
+        android:name="com.example.listadecompras.framework.presentation.product_list.ProductListFragment"
+        android:label="ListProductsFragment" >
+        <action
+            android:id="@+id/action_listProductsFragment_to_addQuantityDialog"
+            app:destination="@id/addQuantityDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.listadecompras.framework.presentation.setting.SettingFragment"
+        android:label="SettingFragment" />
+    <fragment
+        android:id="@+id/shoppingListFragment"
+        android:name="com.example.listadecompras.framework.presentation.shopping.ShoppingListFragment"
+        android:label="ShoppingListFragment" />
+    <dialog
+        android:id="@+id/addQuantityDialog"
+        android:name="com.example.listadecompras.framework.dialog.AddQuantityDialog"
+        android:label="AddQuantityDialog" >
+        <argument
+            android:name="productOnShopping"
+            app:argType="com.example.listadecompras.model.ProductOnItemShopping"
+            app:nullable="true"/>
+    </dialog>
+</navigation>

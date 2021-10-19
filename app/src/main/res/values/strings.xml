@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Lista de Compras</string>
+    <string name="loading">Carregando....</string>
+    <string name="home">Inicio</string>
+    <string name="add_product">Adicionar</string>
+    <string name="product_list">Produtos</string>
+    <string name="config">Configuração</string>
+    <string name="name_product">Nome do Produto</string>
+    <string name="category">Categoria</string>
+    <string name="price">Preço</string>
+    <string name="addText">Adicionar</string>
+    <string name="clearText">Limpar</string>
+    <string name="totalPriceText">R$: 0,00</string>
+    <string name="not_product">Nenhum Produto Encontrado</string>
+    <string name="no_product_car">Não ah Produto no Carrinho</string>
+    <string name="cancel">Cancelar</string>
+    <string name="one">1</string>
+    <string name="add_quantity">Adicione a Quantidade</string>
+    <string name="zero">0</string>
+    <string name="remover_product_content">Remover Produto</string>
+    <string name="add_product_content">Adicionar Produto</string>
+    <string name="add_product_title_string">Adicione o Produto</string>
+
+    <string name="price_product">R$: %.2f</string>
+
+    <plurals name="price_product_plural">
+        <item quantity="one">@string/price_product</item>
+        <item quantity="other">R$: %.2f * %d = %.2f</item>
+    </plurals>
+
+</resources>
