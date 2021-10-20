@@ -22,6 +22,9 @@
     <string name="add_product_title_string">Adicione o Produto</string>
 
     <string name="price_product">R$: %.2f</string>
+    <string name="setting_label">Configuração</string>
+    <string name="edit_menu_item">Editar</string>
+    <string name="remove_menu_item">Remover</string>
 
     <plurals name="price_product_plural">
         <item quantity="one">@string/price_product</item>

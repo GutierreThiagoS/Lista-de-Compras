@@ -19,4 +19,6 @@ interface ProductRepository {
     fun insertCategory(category: Category): Long
 
     fun insertShopping(shopping: ItemShopping): ItemShopping?
+
+    fun removerProduct(product: ProductOnItemShopping): String
 }

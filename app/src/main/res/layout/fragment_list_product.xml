@@ -16,12 +16,12 @@
        <RelativeLayout
            android:layout_width="match_parent"
            android:layout_height="match_parent">
-           <TextView
+           <com.google.android.material.textview.MaterialTextView
                android:id="@+id/notProduct"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:layout_centerInParent="true"
-               android:textSize="20sp"
+               android:textAppearance="?android:attr/textAppearanceLarge"
                android:gravity="center"
                android:text="@string/not_product"/>
            <androidx.recyclerview.widget.RecyclerView

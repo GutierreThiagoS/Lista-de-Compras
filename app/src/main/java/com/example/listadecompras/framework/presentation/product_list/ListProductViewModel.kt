@@ -19,9 +19,10 @@ class ListProductViewModel(
 
     fun insertProductInShoppingList(product: ProductOnItemShopping){
         viewModelScope.launch(Dispatchers.IO + CoroutineExceptionHandler { _, _ ->  }){
-            val state = repository.insertShopping(shopping = ItemShopping(
-                product.idItem, product.idProduct, product.quantity, product.selected
-            )
+            val state = repository.insertShopping(
+                shopping = ItemShopping(
+                    product.idItem, product.idProduct, product.quantity, product.selected
+                )
             )
             withContext(Dispatchers.Main){
                 Log.e("QUANTITY", " $state")
@@ -33,5 +34,14 @@ class ListProductViewModel(
             }
         }
 
+    }
+
+    fun removeProduct(product: ProductOnItemShopping, alert: (message: String) -> Unit){
+        viewModelScope.launch(Dispatchers.IO + CoroutineExceptionHandler { _, _ ->  }) {
+            val message = repository.removerProduct(product)
+            withContext(Dispatchers.Main) {
+                alert(message)
+            }
+        }
     }
 }

@@ -1,13 +1,16 @@
 package com.example.listadecompras.framework.presentation.product_list.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.listadecompras.databinding.ItemProductListRecyclerBinding
-import com.example.listadecompras.handler.OnItemClickProductHandler
+import com.example.listadecompras.framework.handler.OnItemClickProductHandler
 import com.example.listadecompras.domain.model.ProductOnItemShopping
 
-class ProductListAdapter(private val handler: OnItemClickProductHandler): RecyclerView.Adapter<ProductListViewHolder>() {
+class ProductListAdapter(
+    private val handler: OnItemClickProductHandler
+    ): RecyclerView.Adapter<ProductListViewHolder>() {
 
     private var productList = ArrayList<ProductOnItemShopping>()
 
@@ -17,24 +20,20 @@ class ProductListAdapter(private val handler: OnItemClickProductHandler): Recycl
     ): ProductListViewHolder {
         val itemBinding = ItemProductListRecyclerBinding.inflate(
             LayoutInflater.from(parent.context), parent, false)
-        return ProductListViewHolder(itemBinding)
+        return ProductListViewHolder(itemBinding, handler = handler)
     }
 
     override fun onBindViewHolder(holder: ProductListViewHolder, position: Int) {
         val product = productList[position]
-        holder.bind(product = product, handler = handler)
+        holder.bind(product = product)
     }
 
     override fun getItemCount() = productList.size
 
+    @SuppressLint("NotifyDataSetChanged")
     fun addAll(list: List<ProductOnItemShopping>){
-        clear()
-        productList.addAll(list)
-        notifyDataSetChanged()
-    }
-
-    fun clear(){
         productList.clear()
+        productList.addAll(list)
         notifyDataSetChanged()
     }
 }

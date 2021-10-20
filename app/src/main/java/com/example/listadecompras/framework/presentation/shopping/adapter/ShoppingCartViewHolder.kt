@@ -5,12 +5,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.listadecompras.App
 import com.example.listadecompras.R
 import com.example.listadecompras.databinding.ItemShoppingListRecyclerBinding
-import com.example.listadecompras.handler.OnItemClickShppingHandler
+import com.example.listadecompras.framework.handler.OnItemClickShppingHandler
 import com.example.listadecompras.domain.model.ProductOnItemShopping
 
-class ShoppingCartViewHolder(private val binding: ItemShoppingListRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
+class ShoppingCartViewHolder(
+    private val binding: ItemShoppingListRecyclerBinding,
+    private val handler: OnItemClickShppingHandler
+): RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(productOnItemShopping: ProductOnItemShopping, handler: OnItemClickShppingHandler){
+    fun bind(productOnItemShopping: ProductOnItemShopping){
         binding.apply {
             descriptionShoppingProduct.text = productOnItemShopping.description
             priceShoppingProduct.text =

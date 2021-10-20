@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/descriptionShoppingProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
             app:layout_constraintEnd_toStartOf="@+id/checkedShoppingCart"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/image_shopping_product"/>
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/priceShoppingProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_remove_circle"
                 android:contentDescription="@string/remover_product_content" />
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/quantity_product"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

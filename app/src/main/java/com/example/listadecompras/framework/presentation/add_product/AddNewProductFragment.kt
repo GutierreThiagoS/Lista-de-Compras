@@ -72,8 +72,6 @@ class AddNewProductFragment: Fragment() {
                 )
                 viewModel.insertProduct(product)
             })
-
-
         }
     }
     private fun clearEdit(){

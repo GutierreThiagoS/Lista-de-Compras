@@ -23,9 +23,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/descriptionProduct"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/name_product"
             android:layout_margin="10dp"
@@ -33,8 +33,9 @@
             android:textStyle="bold"
             android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/menu"
             app:layout_constraintStart_toEndOf="@id/image_product"/>
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/priceProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,7 +60,7 @@
                 android:src="@drawable/ic_remove_circle"
                 android:contentDescription="@string/remover_product_content"
                 />
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/quantity_product"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -75,6 +76,16 @@
                 android:src="@drawable/ic_add_circle"
                 android:contentDescription="@string/add_product_content"/>
         </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/menu"
+            android:layout_width="40dp"
+            android:layout_height="60dp"
+            android:layout_margin="4dp"
+            android:src="@drawable/ic_more_vert"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

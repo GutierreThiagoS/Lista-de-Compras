@@ -13,7 +13,7 @@ import com.example.listadecompras.domain.model.Product
     Product::class,
     Category::class,
     ItemShopping::class,
-                     ], version = 1, exportSchema = false)
+                     ], version = 1)
 abstract class AppDataBase :RoomDatabase() {
     abstract fun getProductDao(): ProductDao
     abstract fun getCategoryDao(): CategoryDao

@@ -5,18 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.listadecompras.databinding.FragmentListProductBinding
 import com.example.listadecompras.event.Events
 import com.example.listadecompras.event.ProductEvent
-import com.example.listadecompras.handler.OnItemClickProductHandler
+import com.example.listadecompras.framework.handler.OnItemClickProductHandler
 import com.example.listadecompras.domain.model.ProductOnItemShopping
+import com.example.listadecompras.framework.presentation.BaseFragment
 import com.example.listadecompras.framework.presentation.product_list.adapter.ProductListAdapter
 import org.koin.android.ext.android.inject
 import java.util.*
 
-class ProductListFragment: Fragment(), Observer, OnItemClickProductHandler {
+class ProductListFragment: BaseFragment(), Observer, OnItemClickProductHandler {
 
     private val binding by lazy { FragmentListProductBinding.inflate(layoutInflater) }
     private val adapterProduct = ProductListAdapter(this)
@@ -70,6 +70,18 @@ class ProductListFragment: Fragment(), Observer, OnItemClickProductHandler {
 
     override fun onItemClick(product: ProductOnItemShopping) {
         viewModel.insertProductInShoppingList(product)
+    }
+
+    override fun onItemEditClick(product: ProductOnItemShopping) {
+
+    }
+
+    override fun onItemRemoveClick(product: ProductOnItemShopping) {
+        showDialog("Deseja Realmente Remover esse Item?") {
+            viewModel.removeProduct(product) { message ->
+                showDialog(message)
+            }
+        }
     }
 
 }

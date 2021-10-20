@@ -1,4 +1,4 @@
-package com.example.listadecompras.handler
+package com.example.listadecompras.framework.handler
 
 import com.example.listadecompras.domain.model.ProductOnItemShopping
 

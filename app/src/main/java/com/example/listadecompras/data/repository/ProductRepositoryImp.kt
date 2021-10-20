@@ -46,4 +46,11 @@ class ProductRepositoryImp(
 
         return itemShoppingDao.consultItemShopping(shopping.idProductFK)
     }
+
+    override fun removerProduct(product: ProductOnItemShopping): String {
+        return if (itemShoppingDao.consultItemShopping(productId = product.idProduct) == null){
+            productDao.deleteId(productId = product.idProduct)
+            "Produto Deletado!"
+        } else "Esse produto esta No Carrinho!"
+    }
 }

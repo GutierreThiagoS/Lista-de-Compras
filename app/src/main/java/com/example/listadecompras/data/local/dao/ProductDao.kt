@@ -14,6 +14,9 @@ interface ProductDao {
     @Update
     fun update(product: Product)
 
+    @Query("DELETE FROM Product WHERE idProduct = :productId")
+    fun deleteId(productId: Int)
+
     @Query("SELECT * FROM Product ORDER BY description ASC")
     fun listAll(): LiveData<List<Product>?>
 

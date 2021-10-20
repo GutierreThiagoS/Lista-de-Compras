@@ -8,11 +8,13 @@
     <fragment
         android:id="@+id/addNewProductFragment"
         android:name="com.example.listadecompras.framework.presentation.add_product.AddNewProductFragment"
-        android:label="AddNewProductFragment" />
+        android:label="AddNewProductFragment"
+        tools:layout="@layout/fragment_add_new_product"/>
     <fragment
         android:id="@+id/listProductsFragment"
         android:name="com.example.listadecompras.framework.presentation.product_list.ProductListFragment"
-        android:label="ListProductsFragment" >
+        android:label="ListProductsFragment"
+        tools:layout="@layout/fragment_list_product">
         <action
             android:id="@+id/action_listProductsFragment_to_addQuantityDialog"
             app:destination="@id/addQuantityDialog" />
@@ -20,18 +22,20 @@
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.example.listadecompras.framework.presentation.setting.SettingFragment"
-        android:label="SettingFragment" />
+        android:label="SettingFragment"
+        tools:layout="@layout/fragment_setting"/>
     <fragment
         android:id="@+id/shoppingListFragment"
         android:name="com.example.listadecompras.framework.presentation.shopping.ShoppingListFragment"
-        android:label="ShoppingListFragment" />
+        android:label="ShoppingListFragment"
+        tools:layout="@layout/fragment_list_shopping"/>
     <dialog
         android:id="@+id/addQuantityDialog"
         android:name="com.example.listadecompras.framework.dialog.AddQuantityDialog"
         android:label="AddQuantityDialog" >
         <argument
             android:name="productOnShopping"
-            app:argType="com.example.listadecompras.model.ProductOnItemShopping"
+            app:argType="com.example.listadecompras.domain.model.ProductOnItemShopping"
             app:nullable="true"/>
     </dialog>
 </navigation>
