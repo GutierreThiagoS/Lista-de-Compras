@@ -2,12 +2,16 @@ package com.example.listadecompras.data.repository
 
 import androidx.lifecycle.LiveData
 import com.example.listadecompras.App
+import com.example.listadecompras.data.local.dao.ProductDao
 import com.example.listadecompras.domain.model.Category
 import com.example.listadecompras.domain.model.ItemShopping
 import com.example.listadecompras.domain.model.Product
 import com.example.listadecompras.domain.model.ProductOnItemShopping
+import com.example.listadecompras.domain.repository.ProductRepository
 
-class ProductRepositoryImp {
+class ProductRepositoryImp(
+    productDao: ProductDao
+): ProductRepository {
 
     fun insertProduct(product: Product): Long{
         return App.db.getProductDao().insert(product)
