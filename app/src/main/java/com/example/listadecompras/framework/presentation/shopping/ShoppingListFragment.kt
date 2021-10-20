@@ -6,60 +6,51 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.listadecompras.databinding.FragmentListShoppingBinding
 import com.example.listadecompras.event.Events
 import com.example.listadecompras.event.ItemShoppingEvent
 import com.example.listadecompras.handler.OnItemClickShppingHandler
 import com.example.listadecompras.domain.model.ProductOnItemShopping
-import com.example.listadecompras.viewmodel.factory.ShoppingListViewModelFactory
+import com.example.listadecompras.framework.presentation.shopping.adapter.ShoppingListCartAdapter
+import org.koin.android.ext.android.inject
 import java.util.*
 
 class ShoppingListFragment: Fragment(),Observer, OnItemClickShppingHandler {
 
-    private var binding: FragmentListShoppingBinding? = null
+    private val binding by lazy { FragmentListShoppingBinding.inflate(layoutInflater) }
     private val adapterShopping = ShoppingListCartAdapter(this)
-
-    private val viewModel: ShoppingViewModel by lazy {
-        ViewModelProvider(
-            this,
-            ShoppingListViewModelFactory()
-        )[ShoppingViewModel::class.java]
-    }
+    private val viewModel by inject<ShoppingViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        super.onCreateView(inflater, container, savedInstanceState)
-
-        binding = FragmentListShoppingBinding.inflate(layoutInflater, container, false)
-        return binding!!.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding!!.lifecycleOwner = viewLifecycleOwner
-        binding!!.viewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.viewModel = viewModel
 
-        binding!!.shoppingRecyclerView.apply {
+        binding.shoppingRecyclerView.apply {
             adapter = adapterShopping
             layoutManager = LinearLayoutManager(context)
             hasFixedSize()
         }
 
         viewModel.productOnShoppingLive.observe(viewLifecycleOwner, {
-            binding!!.notItemListText.visibility = if (it.isNullOrEmpty()) View.VISIBLE
+            binding.notItemListText.visibility = if (it.isNullOrEmpty()) View.VISIBLE
             else View.GONE
             if (it != null) {
                 var total = 0f
                 it.forEach { productOnShopping ->
                     if (productOnShopping.selected) total += productOnShopping.price * productOnShopping.quantity
                 }
-                binding!!.totalPriceText.text = "   R$: $total"
+                binding.totalPriceText.text = "   R$: $total"
             }
         })
 

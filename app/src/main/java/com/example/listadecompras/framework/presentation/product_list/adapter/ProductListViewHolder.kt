@@ -1,4 +1,4 @@
-package com.example.listadecompras.framework.presentation.product_list
+package com.example.listadecompras.framework.presentation.product_list.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.listadecompras.databinding.ItemProductListRecyclerBinding

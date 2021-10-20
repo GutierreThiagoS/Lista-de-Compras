@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Gutierre/AndroidStudioProjects/Lista-de-Compras/app/src/main/res/layout/activity_menu.xml" value="0.1" />
+        <entry key="..\:/Users/Gutierre/AndroidStudioProjects/Lista-de-Compras/app/src/main/res/layout/fragment_add_new_product.xml" value="0.1" />
+        <entry key="..\:/Users/Gutierre/AndroidStudioProjects/Lista-de-Compras/app/src/main/res/layout/fragment_list_product.xml" value="0.1" />
+        <entry key="..\:/Users/Gutierre/AndroidStudioProjects/Lista-de-Compras/app/src/main/res/layout/fragment_list_shopping.xml" value="0.1" />
         <entry key="..\:/Users/guti_/AndroidStudioProjects/ListadeCompras/app/src/main/res/drawable/ic_add_circle.xml" value="0.17962962962962964" />
         <entry key="..\:/Users/guti_/AndroidStudioProjects/ListadeCompras/app/src/main/res/drawable/ic_baseline_remove_circle.xml" value="0.17962962962962964" />
         <entry key="..\:/Users/guti_/AndroidStudioProjects/ListadeCompras/app/src/main/res/drawable/ic_remove_circle.xml" value="0.17962962962962964" />

@@ -54,8 +54,7 @@
                 android:completionThreshold="1"
                 android:inputType="textAutoComplete"
                 android:padding="16dp"
-                app:autoCompleteItems="@{viewModelAdd.categoryList}"
-                />
+                app:autoCompleteItems="@{viewModelAdd.categoryList}" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/priceInput"

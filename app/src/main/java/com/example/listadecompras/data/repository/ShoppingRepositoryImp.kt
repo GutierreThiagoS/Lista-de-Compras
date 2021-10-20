@@ -1,20 +1,24 @@
 package com.example.listadecompras.data.repository
 
 import androidx.lifecycle.LiveData
-import com.example.listadecompras.App
+import com.example.listadecompras.data.local.dao.ItemShoppingDao
 import com.example.listadecompras.domain.model.ItemShopping
 import com.example.listadecompras.domain.model.ProductOnItemShopping
+import com.example.listadecompras.domain.repository.ShoppingRepository
 
-class ShoppingRepositoryImp {
-    fun getList(): LiveData<List<ProductOnItemShopping>?> {
-        return App.db.getItemShopping().getListProductOnItemShopping()
+class ShoppingRepositoryImp(
+    private val itemShoppingDao: ItemShoppingDao
+): ShoppingRepository {
+
+    override fun getList(): LiveData<List<ProductOnItemShopping>?> {
+        return itemShoppingDao.getListProductOnItemShopping()
     }
 
-    fun update(itemShopping: ItemShopping): Int{
+    override fun update(itemShopping: ItemShopping): Int{
         if (itemShopping.quantity <= 0)
-            App.db.getItemShopping().delete(App.db.getItemShopping().consultItemShopping(itemShopping.idProductFK)!!)
-        else if (App.db.getItemShopping().update(itemShopping) == 0)
-            App.db.getItemShopping().insert(itemShopping)
-        return App.db.getItemShopping().update(itemShopping)
+            itemShoppingDao.delete(itemShoppingDao.consultItemShopping(itemShopping.idProductFK)!!)
+        else if (itemShoppingDao.update(itemShopping) == 0)
+            itemShoppingDao.insert(itemShopping)
+        return itemShoppingDao.update(itemShopping)
     }
 }

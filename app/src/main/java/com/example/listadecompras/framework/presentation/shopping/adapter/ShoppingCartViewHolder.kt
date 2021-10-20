@@ -1,4 +1,4 @@
-package com.example.listadecompras.framework.presentation.shopping
+package com.example.listadecompras.framework.presentation.shopping.adapter
 
 import android.util.Log
 import androidx.recyclerview.widget.RecyclerView

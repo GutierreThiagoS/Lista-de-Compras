@@ -1,7 +1,9 @@
 package com.example.listadecompras.di
 
 import com.example.listadecompras.data.repository.ProductRepositoryImp
+import com.example.listadecompras.data.repository.ShoppingRepositoryImp
 import com.example.listadecompras.domain.repository.ProductRepository
+import com.example.listadecompras.domain.repository.ShoppingRepository
 import org.koin.dsl.bind
 import org.koin.dsl.module
 
@@ -11,4 +13,8 @@ val repositoryModule = module {
         categoryDao = get(),
         itemShoppingDao = get()
     ) } bind ProductRepository::class
+
+    single { ShoppingRepositoryImp(
+        itemShoppingDao = get()
+    ) } bind ShoppingRepository::class
 }

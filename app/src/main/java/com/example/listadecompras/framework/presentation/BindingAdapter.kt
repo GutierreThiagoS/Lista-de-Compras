@@ -5,10 +5,10 @@ import android.widget.ArrayAdapter
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.listadecompras.App
-import com.example.listadecompras.framework.presentation.product_list.ProductListAdapter
+import com.example.listadecompras.framework.presentation.product_list.adapter.ProductListAdapter
 import com.example.listadecompras.domain.model.Category
 import com.example.listadecompras.domain.model.ProductOnItemShopping
-import com.example.listadecompras.framework.presentation.shopping.ShoppingListCartAdapter
+import com.example.listadecompras.framework.presentation.shopping.adapter.ShoppingListCartAdapter
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 
 

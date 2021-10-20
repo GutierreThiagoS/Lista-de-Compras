@@ -17,5 +17,5 @@ import com.example.listadecompras.domain.model.Product
 abstract class AppDataBase :RoomDatabase() {
     abstract fun getProductDao(): ProductDao
     abstract fun getCategoryDao(): CategoryDao
-    abstract fun getItemShopping(): ItemShoppingDao
+    abstract fun getItemShoppingDao(): ItemShoppingDao
 }

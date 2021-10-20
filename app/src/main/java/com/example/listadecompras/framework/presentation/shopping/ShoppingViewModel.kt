@@ -6,13 +6,15 @@ import androidx.lifecycle.viewModelScope
 import com.example.listadecompras.event.ItemShoppingEvent
 import com.example.listadecompras.domain.model.ItemShopping
 import com.example.listadecompras.domain.model.ProductOnItemShopping
-import com.example.listadecompras.data.repository.ShoppingRepositoryImp
+import com.example.listadecompras.domain.repository.ShoppingRepository
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class ShoppingViewModel(private val repository: ShoppingRepositoryImp): ViewModel() {
+class ShoppingViewModel(
+    private val repository: ShoppingRepository
+    ): ViewModel() {
 
     var productOnShoppingLive: LiveData<List<ProductOnItemShopping>?> = repository.getList()
 

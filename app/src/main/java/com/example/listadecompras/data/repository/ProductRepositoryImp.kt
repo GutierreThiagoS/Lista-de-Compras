@@ -1,7 +1,6 @@
 package com.example.listadecompras.data.repository
 
 import androidx.lifecycle.LiveData
-import com.example.listadecompras.App
 import com.example.listadecompras.data.local.dao.CategoryDao
 import com.example.listadecompras.data.local.dao.ItemShoppingDao
 import com.example.listadecompras.data.local.dao.ProductDao
@@ -12,39 +11,39 @@ import com.example.listadecompras.domain.model.ProductOnItemShopping
 import com.example.listadecompras.domain.repository.ProductRepository
 
 class ProductRepositoryImp(
-    productDao: ProductDao,
-    categoryDao: CategoryDao,
-    itemShoppingDao: ItemShoppingDao
+    private val productDao: ProductDao,
+    private val categoryDao: CategoryDao,
+    private val itemShoppingDao: ItemShoppingDao
 ): ProductRepository {
 
-    fun insertProduct(product: Product): Long{
-        return App.db.getProductDao().insert(product)
+    override fun insertProduct(product: Product): Long{
+        return productDao.insert(product)
     }
 
-    fun productList(): LiveData<List<ProductOnItemShopping>?>{
-        return App.db.getProductDao().listAllProductOnItemShopping()
+    override fun productList(): LiveData<List<ProductOnItemShopping>?>{
+        return productDao.listAllProductOnItemShopping()
     }
 
 
-    fun consultCategory(name: String): Category?{
-        return App.db.getCategoryDao().consultCategory(name)
+    override fun consultCategory(name: String): Category?{
+        return categoryDao.consultCategory(name)
     }
 
-    fun consultCategoryList(): LiveData<List<Category>>{
-        return App.db.getCategoryDao().categoryList()
+    override fun consultCategoryList(): LiveData<List<Category>>{
+        return categoryDao.categoryList()
     }
 
-    fun insertCategory(category: Category): Long{
-        return App.db.getCategoryDao().insert(category)
+    override fun insertCategory(category: Category): Long{
+        return categoryDao.insert(category)
     }
 
-    fun insertShopping(shopping: ItemShopping): ItemShopping?{
+    override fun insertShopping(shopping: ItemShopping): ItemShopping?{
 
         if (shopping.quantity <= 0)
-            App.db.getItemShopping().delete(App.db.getItemShopping().consultItemShopping(shopping.idProductFK)!!)
-        else if(App.db.getItemShopping().update(shopping) == 0)
-            App.db.getItemShopping().insert(shopping)
+            itemShoppingDao.delete(itemShoppingDao.consultItemShopping(shopping.idProductFK)!!)
+        else if(itemShoppingDao.update(shopping) == 0)
+            itemShoppingDao.insert(shopping)
 
-        return App.db.getItemShopping().consultItemShopping(shopping.idProductFK)
+        return itemShoppingDao.consultItemShopping(shopping.idProductFK)
     }
 }

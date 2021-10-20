@@ -7,10 +7,12 @@ import androidx.lifecycle.viewModelScope
 import com.example.listadecompras.event.ProductEvent
 import com.example.listadecompras.domain.model.ItemShopping
 import com.example.listadecompras.domain.model.ProductOnItemShopping
-import com.example.listadecompras.data.repository.ProductRepositoryImp
+import com.example.listadecompras.domain.repository.ProductRepository
 import kotlinx.coroutines.*
 
-class ListProductViewModel(private val repository: ProductRepositoryImp): ViewModel() {
+class ListProductViewModel(
+    private val repository: ProductRepository
+    ): ViewModel() {
 
     val productListLive: LiveData<List<ProductOnItemShopping>?> = repository.productList()
 

@@ -5,6 +5,6 @@ import org.koin.dsl.module
 
 val daoModule = module {
     single { get<AppDataBase>().getCategoryDao() }
-    single { get<AppDataBase>().getItemShopping() }
+    single { get<AppDataBase>().getItemShoppingDao() }
     single { get<AppDataBase>().getProductDao() }
 }

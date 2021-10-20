@@ -1,6 +1,5 @@
 package com.example.listadecompras.framework.presentation.add_product
 
-import android.R
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,28 +8,22 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.listadecompras.App
 import com.example.listadecompras.databinding.FragmentAddNewProductBinding
 import com.example.listadecompras.domain.model.Product
-import com.example.listadecompras.viewmodel.factory.AddNewProductViewModelFactory
+import org.koin.android.ext.android.inject
 
 class AddNewProductFragment: Fragment() {
 
-    private var binding : FragmentAddNewProductBinding? = null
-    private val viewModel: AddNewProductViewModel by lazy {
-        ViewModelProvider(
-            this, AddNewProductViewModelFactory()
-        )[AddNewProductViewModel::class.java]
-    }
+    private val binding by lazy { FragmentAddNewProductBinding.inflate(layoutInflater) }
+    private val viewModel: AddNewProductViewModel by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentAddNewProductBinding.inflate(layoutInflater)
-        return binding!!.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -39,13 +32,13 @@ class AddNewProductFragment: Fragment() {
         viewModel.categoryList.observe(viewLifecycleOwner, { list ->
             Log.e("CATEGORY", "$list")
             if (list != null){
-                val adapter = ArrayAdapter(App.context, R.layout.simple_dropdown_item_1line, list.map { it.nameCategory })
-                binding?.categoryEditText?.setAdapter(adapter)
+                val adapter = ArrayAdapter(App.context, android.R.layout.simple_dropdown_item_1line, list.map { it.nameCategory })
+                binding.categoryEditText.setAdapter(adapter)
             }
         })
 
         addProduct()
-        binding?.viewModelAdd = viewModel
+        binding.viewModelAdd = viewModel
 
         viewModel.record.observe(viewLifecycleOwner, {
             clearEdit()
@@ -58,7 +51,7 @@ class AddNewProductFragment: Fragment() {
     }
 
     private fun addProduct(){
-        binding?.apply {
+        binding.apply {
             addProductBtn.setOnClickListener {
                 Log.e("addProductBtn", " $")
                 viewModel.consultCategory(categoryEditText.text.toString())
@@ -84,7 +77,7 @@ class AddNewProductFragment: Fragment() {
         }
     }
     private fun clearEdit(){
-        binding?.apply {
+        binding.apply {
             nameProductEditText.setText("")
             priceEditText.setText("")
             categoryEditText.setText("")

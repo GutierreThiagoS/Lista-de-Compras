@@ -7,10 +7,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.listadecompras.domain.model.Category
 import com.example.listadecompras.domain.model.Product
-import com.example.listadecompras.data.repository.ProductRepositoryImp
+import com.example.listadecompras.domain.repository.ProductRepository
 import kotlinx.coroutines.*
 
-class AddNewProductViewModel(private val repository: ProductRepositoryImp): ViewModel() {
+class AddNewProductViewModel(
+    private val repository: ProductRepository
+    ): ViewModel() {
 
     val record = MutableLiveData("")
     val categoryList: LiveData<List<Category>> = repository.consultCategoryList()

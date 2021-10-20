@@ -1,4 +1,4 @@
-package com.example.listadecompras.framework.presentation.product_list
+package com.example.listadecompras.framework.presentation.product_list.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
