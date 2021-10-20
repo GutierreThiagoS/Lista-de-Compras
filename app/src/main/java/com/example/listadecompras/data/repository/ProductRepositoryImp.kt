@@ -2,6 +2,8 @@ package com.example.listadecompras.data.repository
 
 import androidx.lifecycle.LiveData
 import com.example.listadecompras.App
+import com.example.listadecompras.data.local.dao.CategoryDao
+import com.example.listadecompras.data.local.dao.ItemShoppingDao
 import com.example.listadecompras.data.local.dao.ProductDao
 import com.example.listadecompras.domain.model.Category
 import com.example.listadecompras.domain.model.ItemShopping
@@ -10,7 +12,9 @@ import com.example.listadecompras.domain.model.ProductOnItemShopping
 import com.example.listadecompras.domain.repository.ProductRepository
 
 class ProductRepositoryImp(
-    productDao: ProductDao
+    productDao: ProductDao,
+    categoryDao: CategoryDao,
+    itemShoppingDao: ItemShoppingDao
 ): ProductRepository {
 
     fun insertProduct(product: Product): Long{
