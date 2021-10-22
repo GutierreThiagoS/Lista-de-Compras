@@ -16,8 +16,8 @@
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:id="@+id/image_product"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:foregroundGravity="center"
             android:src="@drawable/ic_launcher_foreground"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,8 +28,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/name_product"
-            android:layout_margin="10dp"
             android:textSize="18sp"
+            android:layout_margin="8dp"
             android:textStyle="bold"
             android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="parent"
@@ -37,29 +37,31 @@
             app:layout_constraintStart_toEndOf="@id/image_product"/>
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/priceProduct"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:textSize="18sp"
-            android:textColor="@color/black"
+            android:layout_margin="8dp"
+            android:textColor="@color/green"
+            android:textStyle="bold"
+            android:textSize="16sp"
             android:text="@string/price"
             app:layout_constraintStart_toEndOf="@id/image_product"
-            app:layout_constraintTop_toBottomOf="@id/descriptionProduct"/>
+            app:layout_constraintTop_toBottomOf="@id/descriptionProduct"
+            app:layout_constraintEnd_toStartOf="@id/menu"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@id/priceProduct"
             app:layout_constraintStart_toEndOf="@id/image_product"
+            app:layout_constraintEnd_toStartOf="@id/menu"
             android:gravity="center"
             android:layout_margin="5dp">
-            <androidx.constraintlayout.utils.widget.ImageFilterButton
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/remove_product_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_remove_circle"
-                android:contentDescription="@string/remover_product_content"
-                />
+                android:contentDescription="@string/remover_product_content" />
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/quantity_product"
                 android:layout_width="wrap_content"
@@ -69,7 +71,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:textSize="22sp"
                 android:textColor="@color/black"/>
-            <androidx.constraintlayout.utils.widget.ImageFilterButton
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/add_product_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -79,13 +81,12 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/menu"
-            android:layout_width="40dp"
-            android:layout_height="60dp"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
             android:layout_margin="4dp"
             android:src="@drawable/ic_more_vert"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

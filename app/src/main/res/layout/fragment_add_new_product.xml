@@ -84,7 +84,7 @@
                 android:layout_weight="1"
                 android:text="@string/clearText"
                 android:backgroundTint="@color/white"
-                android:textColor="@color/purple_500"
+                android:textColor="@color/colorPrimaryDark"
                 android:layout_margin="8dp"
                 android:padding="12dp" />
             <com.google.android.material.button.MaterialButton

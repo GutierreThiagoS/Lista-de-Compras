@@ -25,6 +25,9 @@
     <string name="setting_label">Configuração</string>
     <string name="edit_menu_item">Editar</string>
     <string name="remove_menu_item">Remover</string>
+    <string name="edit_price_product_label">Edite o Preço do Produto:</string>
+    <string name="new_price">Novo Preço</string>
+    <string name="save">Salvar</string>
 
     <plurals name="price_product_plural">
         <item quantity="one">@string/price_product</item>

@@ -25,22 +25,24 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/descriptionShoppingProduct"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/name_product"
             android:layout_margin="10dp"
             android:textSize="18sp"
             android:textColor="@color/black"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/checkedShoppingCart"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/image_shopping_product"/>
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/priceShoppingProduct"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textSize="18sp"
-            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textColor="@color/green"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/checkedShoppingCart"
             app:layout_constraintStart_toEndOf="@id/image_shopping_product"
             app:layout_constraintTop_toBottomOf="@id/descriptionShoppingProduct"
@@ -63,7 +65,7 @@
             app:layout_constraintEnd_toStartOf="@id/checkedShoppingCart"
             android:gravity="center"
             android:layout_margin="5dp">
-            <androidx.constraintlayout.utils.widget.ImageFilterButton
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/remove_product_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -78,7 +80,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:textSize="22sp"
                 android:textColor="@color/black"/>
-            <androidx.constraintlayout.utils.widget.ImageFilterButton
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/add_product_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
