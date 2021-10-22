@@ -48,6 +48,10 @@ class ShoppingCartViewHolder(
                 productOnItemShopping.selected = isChecked
                 handler.onItemClickShopping(productOnItemShopping)
             }
+
+            binding.priceShoppingProduct.setOnLongClickListener {
+                handler.onItemLongClickPrice(productOnItemShopping, adapterPosition)
+            }
         }
     }
 }

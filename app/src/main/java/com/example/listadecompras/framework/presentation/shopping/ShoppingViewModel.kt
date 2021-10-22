@@ -36,4 +36,9 @@ class ShoppingViewModel(
             }
         }
     }
+
+    fun editPriceProduct(productOnItemShopping: ProductOnItemShopping): Int{
+        return repository.editPriceProduct(productOnItemShopping)
+    }
+
 }

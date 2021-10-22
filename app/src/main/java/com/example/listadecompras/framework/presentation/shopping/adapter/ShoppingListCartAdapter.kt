@@ -30,4 +30,9 @@ class ShoppingListCartAdapter(private val handler: OnItemClickShppingHandler):Re
         shoppingList.addAll(list)
         notifyDataSetChanged()
     }
+
+    fun addPosition(productOnItemShopping: ProductOnItemShopping, position: Int){
+        shoppingList[position] = productOnItemShopping
+        notifyItemChanged(position)
+    }
 }

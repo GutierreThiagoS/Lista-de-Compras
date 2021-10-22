@@ -15,6 +15,7 @@ val repositoryModule = module {
     ) } bind ProductRepository::class
 
     single { ShoppingRepositoryImp(
-        itemShoppingDao = get()
+        itemShoppingDao = get(),
+        productDao = get()
     ) } bind ShoppingRepository::class
 }

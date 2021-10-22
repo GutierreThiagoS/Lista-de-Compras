@@ -9,4 +9,6 @@ interface ShoppingRepository {
     fun getList(): LiveData<List<ProductOnItemShopping>?>
 
     fun update(itemShopping: ItemShopping): Int
+
+    fun editPriceProduct(productOnItemShopping: ProductOnItemShopping): Int
 }

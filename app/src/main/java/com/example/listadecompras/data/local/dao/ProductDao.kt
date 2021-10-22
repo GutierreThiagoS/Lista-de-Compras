@@ -12,7 +12,7 @@ interface ProductDao {
     fun insert(product: Product): Long
 
     @Update
-    fun update(product: Product)
+    fun update(product: Product): Int
 
     @Query("DELETE FROM Product WHERE idProduct = :productId")
     fun deleteId(productId: Int)
