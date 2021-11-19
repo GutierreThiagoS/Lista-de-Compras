@@ -25,7 +25,11 @@ class ShoppingCartViewHolder(
                     ( productOnItemShopping.price  * productOnItemShopping.quantity )
                 )
             quantityProduct.text = productOnItemShopping.quantity.toString()
-            checkedShoppingCart.isChecked = productOnItemShopping.selected
+//            checkedShoppingCart.isChecked = productOnItemShopping.selected
+            binding.checkedShoppingCart.setImageResource(
+                if (productOnItemShopping.selected) R.drawable.ic_check_box
+                else R.drawable.ic_check_box_blank
+            )
 
             itemView.setOnClickListener {
                 handler.onItemClickShopping(productOnItemShopping)
@@ -43,9 +47,18 @@ class ShoppingCartViewHolder(
                 handler.onItemClickShopping(productOnItemShopping)
             }
 
-            binding.checkedShoppingCart.setOnCheckedChangeListener { buttonView, isChecked ->
+            /*binding.checkedShoppingCart.setOnCheckedChangeListener { buttonView, isChecked ->
                 Log.e("Checkerd", "button $buttonView, isChecker $isChecked")
                 productOnItemShopping.selected = isChecked
+                handler.onItemClickShopping(productOnItemShopping)
+            }*/
+
+            binding.checkedShoppingCart.setOnClickListener {
+                productOnItemShopping.selected = !productOnItemShopping.selected
+                binding.checkedShoppingCart.setImageResource(
+                    if (productOnItemShopping.selected) R.drawable.ic_check_box
+                    else R.drawable.ic_check_box_blank
+                )
                 handler.onItemClickShopping(productOnItemShopping)
             }
 

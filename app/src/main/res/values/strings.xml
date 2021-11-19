@@ -29,6 +29,8 @@
     <string name="new_price">Novo Preço</string>
     <string name="save">Salvar</string>
 
+    <string name="total_rs">R$: %s</string>
+
     <plurals name="price_product_plural">
         <item quantity="one">@string/price_product</item>
         <item quantity="other">R$: %.2f * %d = %.2f</item>

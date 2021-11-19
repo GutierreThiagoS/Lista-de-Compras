@@ -18,6 +18,8 @@ class ShoppingViewModel(
 
     var productOnShoppingLive: LiveData<List<ProductOnItemShopping>?> = repository.getList()
 
+    var total: LiveData<Float> = repository.getTotal()
+
     fun checkedShopping(productOnItemShopping: ProductOnItemShopping){
         viewModelScope.launch(Dispatchers.IO + CoroutineExceptionHandler { _, _ ->  }){
             val state = repository.update(

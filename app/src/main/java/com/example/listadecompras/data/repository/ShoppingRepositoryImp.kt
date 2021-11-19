@@ -17,6 +17,10 @@ class ShoppingRepositoryImp(
         return itemShoppingDao.getListProductOnItemShopping()
     }
 
+    override fun getTotal(): LiveData<Float> {
+        return itemShoppingDao.getTotalProductOnItemShopping()
+    }
+
     override fun update(itemShopping: ItemShopping): Int{
         if (itemShopping.quantity <= 0)
             itemShoppingDao.delete(itemShoppingDao.consultItemShopping(itemShopping.idProductFK)!!)

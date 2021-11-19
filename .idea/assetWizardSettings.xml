@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/more_vert/baseline_more_vert_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/check_box/baseline_check_box_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,7 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_more_vert" />
+                            <entry key="color" value="289f00" />
+                            <entry key="outputName" value="ic_check_box" />
                             <entry key="sourceFile" value="C:\Users\Gutierre\AndroidStudioProjects\Lista-de-Compras" />
                           </map>
                         </option>

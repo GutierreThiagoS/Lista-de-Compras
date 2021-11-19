@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="100dp"
     android:layout_margin="5dp"
@@ -47,14 +46,25 @@
             app:layout_constraintStart_toEndOf="@id/image_shopping_product"
             app:layout_constraintTop_toBottomOf="@id/descriptionShoppingProduct"
             android:text="@string/price" />
-        <CheckBox
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/checkedShoppingCart"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:gravity="center"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_check_box_blank"/>
+        <!--<CheckBox
             android:id="@+id/checkedShoppingCart"
             android:layout_width="wrap_content"
             android:layout_height="90dp"
             android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />-->
 
         <LinearLayout
             android:layout_width="wrap_content"

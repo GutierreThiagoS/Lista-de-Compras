@@ -9,6 +9,7 @@
         <entry key="..\:/Users/Gutierre/AndroidStudioProjects/Lista-de-Compras/app/src/main/res/drawable/ic_baseline_calculate.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/Gutierre/AndroidStudioProjects/Lista-de-Compras/app/src/main/res/drawable/ic_baseline_playlist_add.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/Gutierre/AndroidStudioProjects/Lista-de-Compras/app/src/main/res/drawable/ic_baseline_settings.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/Gutierre/AndroidStudioProjects/Lista-de-Compras/app/src/main/res/drawable/ic_check_box.xml" value="0.19814814814814816" />
         <entry key="..\:/Users/Gutierre/AndroidStudioProjects/Lista-de-Compras/app/src/main/res/drawable/ic_more_vert.xml" value="0.1962962962962963" />
         <entry key="..\:/Users/Gutierre/AndroidStudioProjects/Lista-de-Compras/app/src/main/res/drawable/ic_remove_circle.xml" value="0.1962962962962963" />
         <entry key="..\:/Users/Gutierre/AndroidStudioProjects/Lista-de-Compras/app/src/main/res/drawable/ic_twotone_local_grocery_store.xml" value="0.21927083333333333" />
@@ -20,7 +21,7 @@
         <entry key="..\:/Users/Gutierre/AndroidStudioProjects/Lista-de-Compras/app/src/main/res/layout/fragment_list_shopping.xml" value="0.2" />
         <entry key="..\:/Users/Gutierre/AndroidStudioProjects/Lista-de-Compras/app/src/main/res/layout/fragment_setting.xml" value="0.17844202898550723" />
         <entry key="..\:/Users/Gutierre/AndroidStudioProjects/Lista-de-Compras/app/src/main/res/layout/item_product_list_recycler.xml" value="0.33" />
-        <entry key="..\:/Users/Gutierre/AndroidStudioProjects/Lista-de-Compras/app/src/main/res/layout/item_shopping_list_recycler.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/Gutierre/AndroidStudioProjects/Lista-de-Compras/app/src/main/res/layout/item_shopping_list_recycler.xml" value="0.22" />
         <entry key="..\:/Users/Gutierre/AndroidStudioProjects/Lista-de-Compras/app/src/main/res/menu/menu_bottom.xml" value="0.203125" />
         <entry key="..\:/Users/Gutierre/AndroidStudioProjects/Lista-de-Compras/app/src/main/res/menu/menu_item_product.xml" value="0.203125" />
         <entry key="..\:/Users/guti_/AndroidStudioProjects/ListadeCompras/app/src/main/res/drawable/ic_add_circle.xml" value="0.17962962962962964" />

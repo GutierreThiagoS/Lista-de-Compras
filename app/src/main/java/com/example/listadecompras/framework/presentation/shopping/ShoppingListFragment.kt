@@ -16,6 +16,7 @@ import com.example.listadecompras.domain.model.ProductOnItemShopping
 import com.example.listadecompras.framework.dialog.EditPriceDialog
 import com.example.listadecompras.framework.presentation.BaseFragment
 import com.example.listadecompras.framework.presentation.shopping.adapter.ShoppingListCartAdapter
+import com.example.listadecompras.framework.utils.toReal
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -52,13 +53,13 @@ class ShoppingListFragment: BaseFragment(), Observer, OnItemClickShppingHandler 
         viewModel.productOnShoppingLive.observe(viewLifecycleOwner, {
             binding.notItemListText.visibility = if (it.isNullOrEmpty()) View.VISIBLE
             else View.GONE
-            if (it != null) {
+            /*if (it != null) {
                 var total = 0f
                 it.forEach { productOnShopping ->
                     if (productOnShopping.selected) total += productOnShopping.price * productOnShopping.quantity
                 }
-                binding.totalPriceText.text = "   R$: $total"
-            }
+                binding.totalPriceText.text = "   R$: ${total.toReal()}"
+            }*/
         })
 
         ItemShoppingEvent.addObserver(this)
@@ -70,7 +71,7 @@ class ShoppingListFragment: BaseFragment(), Observer, OnItemClickShppingHandler 
                 is ItemShoppingEvent ->{
                     when(arg[0]){
                         Events.UPDATE_SHOPPING ->{
-                            Toast.makeText(requireContext(), " ${arg[1]}", Toast.LENGTH_SHORT).show()
+//                            Toast.makeText(requireContext(), " ${arg[1]}", Toast.LENGTH_SHORT).show()
                         }
                         Events.ERRO ->{
                             Toast.makeText(requireContext(), " ${arg[1]}", Toast.LENGTH_SHORT).show()
