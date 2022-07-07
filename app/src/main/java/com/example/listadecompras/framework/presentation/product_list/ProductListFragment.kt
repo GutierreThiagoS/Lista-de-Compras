@@ -7,11 +7,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.listadecompras.databinding.FragmentListProductBinding
+import com.example.listadecompras.domain.model.Category
 import com.example.listadecompras.event.Events
 import com.example.listadecompras.event.ProductEvent
 import com.example.listadecompras.framework.handler.OnItemClickProductHandler
 import com.example.listadecompras.domain.model.ProductOnItemShopping
 import com.example.listadecompras.framework.presentation.BaseFragment
+import com.example.listadecompras.framework.presentation.product_list.adapter.GroupProductAdapter
 import com.example.listadecompras.framework.presentation.product_list.adapter.ProductListAdapter
 import org.koin.android.ext.android.inject
 import java.util.*
@@ -19,7 +21,7 @@ import java.util.*
 class ProductListFragment: BaseFragment(), Observer, OnItemClickProductHandler {
 
     private val binding by lazy { FragmentListProductBinding.inflate(layoutInflater) }
-    private val adapterProduct = ProductListAdapter(this)
+    private val adapterGroup = GroupProductAdapter(this)
     private val viewModel by inject<ListProductViewModel>()
 
     override fun onCreateView(
@@ -33,20 +35,27 @@ class ProductListFragment: BaseFragment(), Observer, OnItemClickProductHandler {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.lifecycleOwner = viewLifecycleOwner
-        binding.viewModel = viewModel
+        //binding.lifecycleOwner = viewLifecycleOwner
+        //binding.viewModel = viewModel
 
         ProductEvent.addObserver(this)
 
-        binding.productListRecycler.apply {
-            adapter = adapterProduct
+        binding.groupListRecycler.apply {
+            adapter = adapterGroup
             layoutManager = LinearLayoutManager(context)
             hasFixedSize()
         }
 
-        viewModel.productListLive.observe(viewLifecycleOwner, {
-            binding.notProduct.visibility = if(it == null || it.isEmpty())  View.VISIBLE
-            else View.GONE
+        viewModel.productListLive.observe(viewLifecycleOwner, { productList ->
+            binding.notProduct.visibility = if(productList == null || productList.isEmpty())  View.VISIBLE
+            else {
+                adapterGroup.addAll(
+                    productList.map {
+                        Category(idCategory = it.idCategory, nameCategory = it.nameCategory) }.distinct(),
+                    productList
+                )
+                View.GONE
+            }
         })
     }
 

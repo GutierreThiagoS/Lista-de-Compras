@@ -6,11 +6,11 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Product(
-    @PrimaryKey(autoGenerate = true) var idProduct: Int,
-    @ColumnInfo var description: String,
-    @ColumnInfo var imgProduct: String,
-    @ColumnInfo var brandProduct: String,
-    @ColumnInfo var idCategoryFK: Int,
-    @ColumnInfo var ean: String,
-    @ColumnInfo var price: Float
+    @PrimaryKey(autoGenerate = true) var idProduct: Int = 0,
+    var description: String,
+    var imgProduct: String,
+    var brandProduct: String,
+    var idCategoryFK: Int,
+    var ean: String,
+    var price: Float
 )
