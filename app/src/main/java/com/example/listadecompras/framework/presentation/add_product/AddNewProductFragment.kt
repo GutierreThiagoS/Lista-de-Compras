@@ -8,12 +8,14 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.listadecompras.App
 import com.example.listadecompras.databinding.FragmentAddNewProductBinding
 import com.example.listadecompras.domain.model.Product
+import com.example.listadecompras.framework.presentation.BaseFragment
 import org.koin.android.ext.android.inject
 
-class AddNewProductFragment: Fragment() {
+class AddNewProductFragment: BaseFragment() {
 
     private val binding by lazy { FragmentAddNewProductBinding.inflate(layoutInflater) }
     private val viewModel: AddNewProductViewModel by inject()
@@ -28,6 +30,10 @@ class AddNewProductFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        setTitle("Adicionar Produto")
+
+        enableMenu(false)
 
         viewModel.categoryList.observe(viewLifecycleOwner, { list ->
             Log.e("CATEGORY", "$list")

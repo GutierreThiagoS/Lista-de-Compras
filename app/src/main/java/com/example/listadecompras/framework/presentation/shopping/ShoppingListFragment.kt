@@ -53,13 +53,6 @@ class ShoppingListFragment: BaseFragment(), Observer, OnItemClickShppingHandler 
         viewModel.productOnShoppingLive.observe(viewLifecycleOwner, {
             binding.notItemListText.visibility = if (it.isNullOrEmpty()) View.VISIBLE
             else View.GONE
-            /*if (it != null) {
-                var total = 0f
-                it.forEach { productOnShopping ->
-                    if (productOnShopping.selected) total += productOnShopping.price * productOnShopping.quantity
-                }
-                binding.totalPriceText.text = "   R$: ${total.toReal()}"
-            }*/
         })
 
         ItemShoppingEvent.addObserver(this)

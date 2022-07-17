@@ -5,5 +5,6 @@ enum class Events {
     INSERT_PRODUCT_SHOPPING,
     ERROR_INSERT,
     UPDATE_SHOPPING,
+    DRAWER_VISIBLE,
     ERRO
 }

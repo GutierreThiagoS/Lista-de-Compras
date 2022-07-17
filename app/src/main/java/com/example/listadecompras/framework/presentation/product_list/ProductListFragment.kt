@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.listadecompras.databinding.FragmentListProductBinding
 import com.example.listadecompras.domain.model.Category
@@ -35,8 +37,8 @@ class ProductListFragment: BaseFragment(), Observer, OnItemClickProductHandler {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //binding.lifecycleOwner = viewLifecycleOwner
-        //binding.viewModel = viewModel
+        setTitle("Lista de Produtos")
+        enableMenu(false)
 
         ProductEvent.addObserver(this)
 

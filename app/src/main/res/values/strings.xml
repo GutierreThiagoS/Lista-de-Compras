@@ -31,6 +31,8 @@
 
     <string name="total_rs">R$: %s</string>
     <string name="group_title">titulo do grupo</string>
+    <string name="open_drawer">open</string>
+    <string name="close_drawer">close</string>
 
     <plurals name="price_product_plural">
         <item quantity="one">@string/price_product</item>

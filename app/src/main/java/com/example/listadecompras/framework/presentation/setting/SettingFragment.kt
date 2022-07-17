@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.listadecompras.databinding.FragmentSettingBinding
+import com.example.listadecompras.framework.presentation.BaseFragment
 
-class SettingFragment: Fragment() {
+class SettingFragment: BaseFragment() {
 
     private var binding : FragmentSettingBinding? = null
 
